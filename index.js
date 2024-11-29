@@ -1,26 +1,26 @@
-import express from "express";
-import cors from "cors";
-import multer from "multer";
-import XLSX from "xlsx";
-import OpenAI from "openai";
-import dotenv from "dotenv";
+// import express from "express";
+// import cors from "cors";
+// import multer from "multer";
+// import XLSX from "xlsx";
+// import OpenAI from "openai";
+// import dotenv from "dotenv";
 
-dotenv.config();
+// dotenv.config();
 
-const port = process.env.PORT || 3000;
-const app = express();
+// const port = process.env.PORT || 3000;
+// const app = express();
 
-app.use(cors());
+// app.use(cors());
 
-const upload = multer();
+// const upload = multer();
 
-const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
-});
+// const openai = new OpenAI({
+//   apiKey: process.env.OPENAI_API_KEY,
+// });
 
-app.get("/", (req, res) => {
-  res.send("server is working");
-});
+// app.get("/", (req, res) => {
+//   res.send("server is working");
+// });
 
 // app.post("/upload", upload.single("file"), async (req, res) => {
 //   try {
@@ -102,8 +102,17 @@ app.get("/", (req, res) => {
 //   }
 // });
 
-app.listen(port, () => {
-  console.log(`server running on port ${port}...`);
+// app.listen(port, () => {
+//   console.log(`server running on port ${port}...`);
+// });
+
+// export default app;
+
+const express = require('express');
+const app = express();
+
+app.get('/', (req, res) => {
+  res.send('Hello, world!');
 });
 
-export default app;
+module.exports = app;
